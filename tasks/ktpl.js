@@ -46,7 +46,7 @@ module.exports = function (grunt) {
     grunt.template.setDelimiters('myDelimiters');
 
     function kissy_template(src, dest) {
-      src = src.replace(/\r\n/g, '\n').replace(/\'/g, "\\'");
+      src = src.replace(/\r\n|\r|\n/g, "").replace(/\'/g, "\\'");
 
       var moduleJS = kissyModuleTemplate(src);
 
